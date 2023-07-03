@@ -5,11 +5,7 @@ const storage = multer.diskStorage({
         cb(null, 'books')
     },
     filename(req, file, cb) {
-        cb(null, `${Date.now().toLocaleString("ru", {  
-            year: 'numeric',
-            month: 'numeric',
-            day: 'numeric',
-          })}-${file.originalname}`)
+        cb(null, `${Date.now()}-${file.originalname}`)
     }
 })
 
